@@ -1,0 +1,22 @@
+{
+  "name": "ossautomation",
+  "version": "1.0.0",
+  "description": "Jenkins와 Kubernetes를 활용한 CI/CD 환경 구축 및 자동화",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leejw-lu/OssAutomation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leejw-lu/OssAutomation/issues"
+  },
+  "homepage": "https://github.com/leejw-lu/OssAutomation#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
