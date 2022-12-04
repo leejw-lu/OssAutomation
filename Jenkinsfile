@@ -8,7 +8,7 @@ node {
     }
     stage('Test image') {
         app.inside {
-            sh 'node --version'
+            
         }
     }
     stage('Push image') {
