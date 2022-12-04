@@ -1,7 +1,7 @@
 # OssAutomation
 Jenkins와 Kubernetes를 활용한 CI/CD 환경 구축 및 자동화
 
-## 💙Commit Convention
+## 💙Commit Convention 💙
 [Feat] 새로운 기능 추가 \
 [Fix] 버그 해결 \
 [Design] UI 디자인 변경 (css 등) \
