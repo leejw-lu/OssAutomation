@@ -1,41 +1,41 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello
+  name: prbased-test
   labels:
-    app: hello
+    app: prbased-test
 spec:
   replicas: 3
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: hello
+      app: prbased-test
   template:
     metadata:
       labels:
-        app: hello
-        tier: hello
+        app: prbased-test
+        tier: prbased-test
     spec:
       containers:
-      - name: hello
+      - name: dino
         image: jiwoo22/prbased_test:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
-          name: hello
+          name: prbased-test
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello
+  name: prbased-test
   labels:
-    app: hello
+    app: prbased-test
 spec:
   ports:
   - port: 80
     targetPort: 3000
   selector:
-    app: hello
-    tier: hello
+    app: prbased-test
+    tier: prbased-test
   type: LoadBalancer
