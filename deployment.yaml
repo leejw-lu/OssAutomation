@@ -6,11 +6,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: prbased
+      app: prbased-test
   template:
     metadata:
       labels:
-        app: prbased
+        app: prbased-test
     spec:
       containers:
       - name: express
