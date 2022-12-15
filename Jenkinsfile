@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PROJECT_ID = 'serversystemma'
+        PROJECT_ID = 'serversystemm'
         CLUSTER_NAME = 'kube'
         LOCATION = 'asia-northeast3-a'
         CREDENTIALS_ID = 'gke'
