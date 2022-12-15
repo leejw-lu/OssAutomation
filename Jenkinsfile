@@ -4,7 +4,7 @@ node {
         git 'https://github.com/leejw-lu/OssAutomation.git'
     }
     stage('Build image') {
-        app = docker.build("jiwoo22/prbased_test")
+        app = docker.build("jiwoo22/prbasedjw")
     }
     stage('Test image') {
         app.inside {
@@ -12,7 +12,7 @@ node {
         }
     }
     stage('Push image') {
-        docker.withRegistry('https://registry.hub.docker.com', 'docker_hub') {
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub2') {
            app.push("${env.BUILD_NUMBER}")
            app.push("latest")
         }
