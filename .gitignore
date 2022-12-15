@@ -1,4 +1,5 @@
 node_modules
 db.js
 .env
+.mysql_secret.yaml
 package-lock.json
