@@ -1,41 +1,41 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: prbased_test
+  labels:
+    app: prbased_test
+spec:
+  replicas: 2
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: prbased_test
+  template:
+    metadata:
+      labels:
+        app: prbased_test
+        tier: prbased_test
+    spec:
+      containers:
+      - name: hello
+        image: jiwoo/prbased_test:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
           name: hello
-            labels:
-                        app: hello
-                        spec:
-                                  replicas: 3
-                                    strategy:
-                                                type: Recreate
-                                                  selector:
-                                                              matchLabels:
-                                                                            app: hello
-                                                                              template:
-                                                                                          metadata:
-                                                                                                        labels:
-                                                                                                                        app: hello
-                                                                                                                                tier: hello
-                                                                                                                                    spec:
-                                                                                                                                                  containers:
-                                                                                                                                                                - name: hello
-                                                                                                                                                                          image: pjbear/hello:latest
-                                                                                                                                                                                  imagePullPolicy: Always
-                                                                                                                                                                                          ports:
-                                                                                                                                                                                                          - containerPort: 5000
-                                                                                                                                                                                                                      name: hello
-                                                                                                                                                                                                          ---
-                                                                                                                                                                                          apiVersion: v1
-                                                                                                                                                                                          kind: Service
-                                                                                                                                                                                          metadata:
-                                                                                                                                                                                                    name: hello
-                                                                                                                                                                                                      labels:
-                                                                                                                                                                                                                  app: hello
-                                                                                                                                                                                                                  spec:
-                                                                                                                                                                                                                            ports:
-                                                                                                                                                                                                                                      - port: 80
-                                                                                                                                                                                                                                            targetPort: 5000
-                                                                                                                                                                                                                                              selector:
-                                                                                                                                                                                                                                                          app: hello
-                                                                                                                                                                                                                                                              tier: hello
-                                                                                                                                                                                                                                                                type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prbased_test
+  labels:
+    app: prbased_test
+spec:
+  ports:
+  - port: 80
+    targetPort: 3000
+  selector:
+    app: prbased_test
+    tier: prbased_test
+  type: LoadBalancer
