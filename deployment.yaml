@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: prbased_test
+  name: prbased
   labels:
-    app: prbased_test
+    app: prbased
 spec:
   replicas: 2
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: prbased_test
+      app: prbase
   template:
     metadata:
       labels:
-        app: prbased_test
-        tier: prbased_test
+        app: prbased
+        tier: prbased
     spec:
       containers:
       - name: hello
@@ -28,14 +28,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: prbased_test
+  name: prbased
   labels:
-    app: prbased_test
+    app: prbased
 spec:
   ports:
   - port: 80
     targetPort: 3000
   selector:
-    app: prbased_test
-    tier: prbased_test
+    app: prbased
+    tier: prbased
   type: LoadBalancer
