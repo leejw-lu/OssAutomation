@@ -1,9 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: prbased-test
+  name: prbased
+  labels:
+    app: prbased
 spec:
-  replicas: 1
+  replicas: 3
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: prbased
@@ -11,23 +15,27 @@ spec:
     metadata:
       labels:
         app: prbased
+        tier: prbased
     spec:
       containers:
-      - name: rego
+      - name: prbased
         image: jiwoo22/prbased_test:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
-          name: prbased-test
+          name: prbased
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: prbased-test-1
+  name: prbased
+  labels:
+    app: prbased
 spec:
+  ports:
+  - port: 80
+    targetPort: 3000
   selector:
     app: prbased
-  ports:
-    - port: 80
-      targetPort: 3000
+    tier: prbased
   type: LoadBalancer
