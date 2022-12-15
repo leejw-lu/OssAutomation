@@ -4,8 +4,8 @@ metadata:
   name: prbased-test
 spec:
   replicas: 3
-  strategy:
   selector:
+    matchLabels:
       app: prbased
   template:
     metadata:
