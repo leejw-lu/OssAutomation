@@ -1,0 +1,9 @@
+piVersion: v1
+kind: ConfigMap
+metadata:
+          name: mysql-config
+          data:
+                    host: 35.193.22.220
+                      port: 3306
+                        database: rego
+                          user: jiwoo
