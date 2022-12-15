@@ -3,17 +3,17 @@ kind: Deployment
 metadata:
   name: prbased-test
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: prbased-test
+      app: prbased
   template:
     metadata:
       labels:
-        app: prbased-test
+        app: prbased
     spec:
       containers:
-      - name: express
+      - name: rego
         image: jiwoo22/prbased_test:latest
         imagePullPolicy: Always
         ports:
@@ -23,7 +23,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: prbased-t
+  name: prbased-test-1
 spec:
   selector:
     app: prbased
