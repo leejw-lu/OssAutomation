@@ -4,7 +4,7 @@
   "description": "Jenkins와 Kubernetes를 활용한 CI/CD 환경 구축 및 자동화",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
