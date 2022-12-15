@@ -18,7 +18,7 @@ spec:
         tier: prbased-test
     spec:
       containers:
-      - name: dino
+      - name: prbased-test
         image: jiwoo22/prbased_test:latest
         imagePullPolicy: Always
         ports:
