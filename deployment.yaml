@@ -22,7 +22,7 @@ spec:
         image: jiwoo22/prbased_test:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 3000
+        - containerPort: 5000
           name: prbased
 ---
 apiVersion: v1
@@ -34,7 +34,7 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: 3000
+    targetPort: 5000
   selector:
     app: prbased
     tier: prbased
