@@ -5,7 +5,7 @@ const session = require("express-session");
 const ejs = require("ejs");
 const multer = require("multer");
 
-const port = 3000;
+const port = 5000;
 
 app.set("view engine", "ejs");
 
