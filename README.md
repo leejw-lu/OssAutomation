@@ -30,6 +30,7 @@
 - 로그인, 회원가입, 로그아웃
 - 내가 쓴 새해 목표 조회하기
 - 다른 사람 목표 구경하기
+- 다른 사람 목표 응원하기
 
 ### 협업툴
 - [피그마](https://www.figma.com/file/vtqSI86ZnFanYD9L8OdvF9/%EC%98%A8%EB%9D%BC%EC%9D%B8-%EB%8F%85%EC%84%9C-%EB%AA%A8%EC%9E%84?node-id=0%3A1)
